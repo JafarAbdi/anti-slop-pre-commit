@@ -1,0 +1,24 @@
+- id: anti-slop
+  name: anti-slop (oxlint)
+  description: Reject low-evidence and low-signal TypeScript/JavaScript patterns.
+  entry: anti-slop-precommit
+  language: node
+  files: \.(m|c)?[jt]sx?$
+  exclude: |
+    (?x)^(
+      \.agent/|\.agents/|\.claude/|\.codex/|\.continue/|\.cursor/|
+      \.gemini/|\.opencode/|\.pi/|\.roo/|\.windsurf/|
+      tools/oxlint/anti-slop/
+    )
+- id: anti-slop-effect
+  name: anti-slop Effect rules (oxlint)
+  description: Opt-in Effect service and Layer architecture rules. Register only in Effect repositories.
+  entry: anti-slop-precommit --effect
+  language: node
+  files: \.(m|c)?[jt]sx?$
+  exclude: |
+    (?x)^(
+      \.agent/|\.agents/|\.claude/|\.codex/|\.continue/|\.cursor/|
+      \.gemini/|\.opencode/|\.pi/|\.roo/|\.windsurf/|
+      tools/oxlint/anti-slop/
+    )

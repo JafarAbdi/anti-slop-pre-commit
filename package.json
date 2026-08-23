@@ -1,0 +1,16 @@
+{
+  "name": "anti-slop-pre-commit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "pre-commit / prek hooks for the anti-slop Oxlint rules.",
+  "type": "module",
+  "bin": {
+    "anti-slop-precommit": "./scripts/precommit.mjs"
+  },
+  "dependencies": {
+    "oxlint": "1.78.0",
+    "oxlint-plugin-anti-slop": "github:dmmulroy/anti-slop#6d538555cb151d4121ed51a27db81890eacf8ae9",
+    "tsx": "4.23.12"
+  },
+  "license": "MIT"
+}

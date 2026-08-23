@@ -1,0 +1,17 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci
+      - name: hook flags slop and passes clean code
+        run: |
+          printf 'export const bad = (x: object): unknown => x;\n' > bad.ts
+          printf 'export const ok = (x: number): number => x;\n' > ok.ts
+          ! node scripts/precommit.mjs bad.ts
+          node scripts/precommit.mjs ok.ts
