@@ -15,3 +15,8 @@ jobs:
           printf 'export const ok = (x: number): number => x;\n' > ok.ts
           ! node scripts/precommit.mjs bad.ts
           node scripts/precommit.mjs ok.ts
+      - name: effect hook flags manual _tag comparison
+        run: |
+          printf 'type R = { _tag: "Ready" } | { _tag: "Idle" };\nexport const isReady = (r: R) => r._tag === "Ready";\n' > tag.ts
+          ! node scripts/precommit.mjs --effect tag.ts
+          node scripts/precommit.mjs --effect ok.ts
