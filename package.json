@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "oxlint": "1.78.0",
-    "oxlint-plugin-anti-slop": "github:dmmulroy/anti-slop#c44ef22ca116d0ba62a3ff663a0bd13a3f3fa40b",
+    "oxlint-plugin-anti-slop": "github:dmmulroy/anti-slop#13909c9e07590f5a85d93c62712259fe14a883f7",
     "tsx": "4.23.12"
   },
   "license": "MIT"
